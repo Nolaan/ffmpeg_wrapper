@@ -436,9 +436,9 @@ class ffmpeg_wrapper {
 
     // NOlaan
     $file['video'] = array (
-                     'codec' => "NOT A VIDEO FILE",
-                     's'     => "NOT A VIDEO FILE",
-                     'br'    => "NOT A VIDEO FILE",
+                     'codec' => 'N/A',
+                     's'     => 'N/A',
+                     'br'    => 'N/A',
                      );
 
     if (file_exists($filepath)) {
@@ -694,7 +694,8 @@ class ffmpeg_wrapper {
     }
 
     // If we can decode both audio and video, the file is ok
-    if ($can_audio_decode && $can_video_decode) {
+    // Nolaan : If we can decode audio or video !!!
+    if ($can_audio_decode || $can_video_decode) {
       return TRUE;
     }
 
